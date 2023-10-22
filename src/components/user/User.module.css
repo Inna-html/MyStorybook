@@ -1,0 +1,17 @@
+.user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* color: #645454; */
+    font-size: 20px;
+    height: 50px;
+    /* background: #2e2e2e; */
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 50px;
+    border: #0d0c0c solid 3px;
+    margin: 5px;
+}
+
+.user:hover {
+    background: #000;
+}
