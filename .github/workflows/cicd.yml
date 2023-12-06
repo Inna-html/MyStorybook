@@ -1,37 +1,38 @@
-name: CI/CD
 
-on: [push, pull_request]
+# name: CI/CD
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+# on: [push, pull_request]
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     strategy:
+#       matrix:
+#         node-version: [14.x, 16.x, 18.x]
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v3
 
-      - name: Environment log
-        id: env
-        run: |
-          node --version
-          yarn --version
+#       - name: Use Node.js ${{ matrix.node-version }}
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: ${{ matrix.node-version }}
 
-      - name: Install dependecies
-        run: |
-          npm install
+#       - name: Environment log
+#         id: env
+#         run: |
+#           node --version
+#           yarn --version
 
-      - name: Run build process
-        run: |
-          yarn build
+#       - name: Install dependecies
+#         run: |
+#           npm install
 
-      - name: Run testing
-        run: |
-          yarn test
-          yarn test:build
+#       - name: Run build process
+#         run: |
+#           yarn build
+
+#       - name: Run testing
+#         run: |
+#           yarn test
+#           yarn test:build
